@@ -31,4 +31,4 @@ def lookup():
 }"""
     return state_for(zip)
 
-app.run()
+app.run(host= '0.0.0.0',port=5000)
