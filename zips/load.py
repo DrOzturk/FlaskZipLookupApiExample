@@ -10,7 +10,7 @@ def load_dict(filename):
     dict_zips = df_zips.set_index('zip')['state'].to_dict()
     return dict_zips
 
-dict_zips = load_dict("zip_city_state.csv")
+dict_zips = load_dict("zips/zip_city_state.csv")
 
 def state_for(zip):
     return dict_zips[zip]

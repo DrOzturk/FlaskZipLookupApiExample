@@ -1,5 +1,10 @@
 # FlaskZipLookupApiExample
 An example web service API implemented in Python using Flask framework.
+git clone git@github.com:DrOzturk/FlaskZipLookupApiExample.git
+python3 -m zips.service
+
+In postman or brorser go to:
+http://127.0.0.1:5000/?zip=30009
 
 # Developer Tools
 ## Linting
