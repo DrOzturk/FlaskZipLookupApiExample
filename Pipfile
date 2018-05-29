@@ -13,6 +13,7 @@ pycodestyle = "*"
 [packages]
 
 pandas = "==0.21.0"
+flask = "*"
 
 
 [requires]

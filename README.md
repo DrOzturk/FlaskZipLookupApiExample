@@ -1,11 +1,24 @@
 # FlaskZipLookupApiExample
 An example web service API implemented in Python using Flask framework.
+```bash
+# clone this repo to local
 git clone git@github.com:DrOzturk/FlaskZipLookupApiExample.git
+# create virtual environment with dependencies defined in Pipenv file
+pipenv install
+# start shell in that virtual environment
+pipenv shell
+# start this zip lookup service 
 python3 -m zips.service
+```
 
-In postman or brorser go to:
+In postman or browser go to:
 http://127.0.0.1:5000/?zip=30009
-
+or
+http://0.0.0.0:5000/?zip=30009
+in commandline you can use curl
+```bash 
+curl http://127.0.0.1:5000/?zip=30009
+```
 # Developer Tools
 ## Linting
 - pycodestyle <filename>: use to check if code complies with code style guide
