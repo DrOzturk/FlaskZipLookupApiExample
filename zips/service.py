@@ -1,12 +1,18 @@
 from zips.load import state_for
-#in iPython, above import does not run the codes to create the globals! only defines methods.
-#uncomment line below, if you are running in iPython
-#exec(open('carotene_helper.py').read())
-
 from flask import Flask
 from flask import request
 
 app = Flask('__name__')
+error_json = """{
+    "errors": [
+        {
+            "type": "Missing parameter",
+            "message": "Zip must be provided",
+            "code": 0
+        }
+    ],
+    "status": "BAD_REQUEST"
+}"""
 
 @app.route('/', methods=['GET', 'POST'])
 def lookup():
@@ -19,16 +25,7 @@ def lookup():
         zip = request.values.get('zip', '')
 
     if (not zip or zip.strip(" \"'.?!,")==""):
-        return """{
-    "errors": [
-        {
-            "type": "Missing parameter",
-            "message": "Zip must be provided",
-            "code": 0
-        }
-    ],
-    "status": "BAD_REQUEST"
-}"""
+        return error_json
     return state_for(zip)
 
 app.run(host= '0.0.0.0',port=5000)
